@@ -28,6 +28,31 @@ const categoriesContent = (id) => {
         .then((data) => displayCategoriesContent(data.data));
 
 };
+function showAllDetails(news_id) {
+    let url = 'https://openapi.programming-hero.com/api/news/${news_id}';
+    console.log(url);
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => disPlay(data.data));
+}
+const disPlay = (data) => {
+    console.log(data[0].title);
+
+    data.forEach(news => {
+        const modalTitle = document.getElementById("newsDetailModalLabel");
+        modalTitle.innerText = news.title;
+        const newsDetails = document.getElementById("news-details");
+        newsDetails.innerHTML = `
+      <img src="${news.image_url}" class="card-img-top p-2 w-100 h-50 " alt="Not Found" />
+      <p>Author: ${news.author.name ? news.author.name : "No data found"}</p>
+      <p>Publish Date: ${news.author.published_date ? news.author.published_date : "No data found"}</p>
+      <p>Total View: ${news.total_view}</p>
+      `;
+        console.log(modalTitle.innerText);
+    })
+
+
+};
 
 const displayCategoriesContent = (data) => {
     data.sort(function (a, b) {
@@ -65,8 +90,9 @@ const displayCategoriesContent = (data) => {
                           <i class="fa-solid fa-star full"></i>
                           <i class="fa-solid fa-star"></i>
                           </div>
-                          <div onclick='showAllDetails("${element._id}")' data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right" ></i></div>
-              </button>
+                          <div onclick='showAllDetails("${element._id
+                }")' data-bs-toggle="modal"
+                          data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right" ></i></div>
                           
                           </div>
                       </div>
@@ -108,5 +134,7 @@ const toggleSpinner = (isLoading) => {
         loaderSection.classList.add("d-none");
     }
 };
+
+
 
 loadNews();
