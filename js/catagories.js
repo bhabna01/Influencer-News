@@ -10,7 +10,7 @@ const displayCategories = (categories) => {
     categories.forEach((category) => {
         const span = document.createElement("span");
         span.innerHTML = `
-          <span onclick="categoriesContent(${category.category_id})">${category.category_name}</span>
+          <span class="p-3"onclick="categoriesContent(${category.category_id})">${category.category_name}</span>
           `;
         categoriesContainer.appendChild(span);
 
