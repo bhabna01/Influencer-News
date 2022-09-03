@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,9 +27,19 @@
     </div>
     <div>
         <h2>What is the difference between Arrow function and Regular function?</h2>
-        <p></p>
+        <p>1.An arrow function does not have it's own this keyword. Instead, this is bound to the parent this. In the
+            case
+            where the arrow function is executed in the global context (it has no parent function/scope), this will be
+            bound to the global object (window in the browser or globalThis in node).</p>
+        <p>2.The best things about an arrow function is implicit returns.Implicit returns from arrow functions becomes
+            especially useful when working with array methods or callbacks.</p>
+        <p>3.The third major difference between arrow functions and regular functions is that arrow functions are always
+            anonymous. They cannot be named. Whereas a regular function created with the function keyword can be named
+            or anonymous (function myFunc() {... } vs function() { ... }), arrow functions are always anonymous.</p>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
