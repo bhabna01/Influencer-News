@@ -30,12 +30,16 @@ const categoriesContent = (id) => {
 };
 
 const displayCategoriesContent = (data) => {
+    data.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    });
     let allNews = document.getElementById('allNews')
     allNews.textContent = ''
     if (data.length > 0) {
         data.forEach(element => {
             let div = document.createElement('div')
             div.classList.add('p-5')
+
             div.innerHTML = `
               <div class="card mb-3 p-5">
               <div class="row g-0">
@@ -73,6 +77,7 @@ const displayCategoriesContent = (data) => {
               `
 
             document.getElementById('valuesOfCategory').innerText = data.length + ' Items founds for Category';
+
             allNews.appendChild(div)
 
         })
