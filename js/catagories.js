@@ -66,7 +66,7 @@ const displayCategoriesContent = (data) => {
             div.classList.add('p-5')
 
             div.innerHTML = `
-              <div class="card mb-3 p-5">
+            <div class="card mb-3 p-5">
               <div class="row g-0">
                   <div class="col-md-4">
                       <img src="${element.thumbnail_url}" class="img-fluid rounded-start" alt="...">
@@ -83,7 +83,7 @@ const displayCategoriesContent = (data) => {
                           <div>
                           <i class="fa-solid fa-eye me-1"></i>${element.total_view ? element.total_view : "No Content"}
                           </div>
-                          <div>
+                          <div calss="d-flex justify-content-center">
                           <i class="fa-solid fa-star full"></i>
                           <i class="fa-solid fa-star full"></i>
                           <i class="fa-solid fa-star full"></i>
@@ -94,7 +94,7 @@ const displayCategoriesContent = (data) => {
                 }")' data-bs-toggle="modal"
                           data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right" ></i></div>
                           
-                          </div>
+                          
                       </div>
                   </div>
                   
