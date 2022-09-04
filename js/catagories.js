@@ -36,7 +36,7 @@ function showAllDetails(news_id) {
         .then((data) => disPlay(data.data));
 }
 const disPlay = (data) => {
-    console.log(data[0].title);
+    // console.log(data[0].title);
 
     data.forEach(news => {
         const modalTitle = document.getElementById("newsDetailModalLabel");
@@ -73,7 +73,7 @@ const displayCategoriesContent = (data) => {
                   </div>
                   <div class="col-md-8">
                       <div class="card-body">
-                          <h1 class="card-title">${element.title}</h1>
+                          <h1 class="card-title lh-sm">${element.title}</h1>
                           <p class="card-text">${element.details.length > 350 ? element.details.slice(0, 200) + '...' : element.details}</p>
                           <div class='d-flex justify-content-between align-items-center'>
                           <div class='d-flex align-items-center'>
@@ -93,11 +93,11 @@ const displayCategoriesContent = (data) => {
                           <div onclick='showAllDetails("${element._id
                 }")' data-bs-toggle="modal"
                           data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right" ></i></div>
-                          
-                          
+
+
                       </div>
                   </div>
-                  
+
               </div>
           </div>
               `
